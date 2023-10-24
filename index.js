@@ -1,5 +1,23 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  
+const backwardWord = backwardString(word);
+
+if (word === backwardWord) {
+  return true;
+}
+else {
+  return false;
+}
+
+}
+// Write your algorithm here
+
+function backwardString(word) {
+  const wordArray = word.split ("");
+  const reversedWordArray = wordArray.reverse();
+  const backwardWord = reversedWordArray.join("");
+
+  return backwardWord;
 }
 
 /* 
@@ -16,10 +34,12 @@ if (require.main === module) {
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
 
-  console.log("");
+
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+
 }
 
 module.exports = isPalindrome;
